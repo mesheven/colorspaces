@@ -319,31 +319,31 @@
   var root = {};
 
   // If Stylus is installed, make module.exports work as a plugin
-  try {
-    (function () {
-      var stylus = require('stylus');
-      root = function root() {
-        var spaces = Object.keys(conv).filter(function (space) {
-          return space !== 'sRGB' && space !== 'hex';
-        }).map(function (space) {
-          return space;
-        });
-        return function (style) {
-          return spaces.map(function (space) {
-            return style.define(space, function (space) {
-              return function (a, b, c) {
-                var g = void 0,
-                    r = void 0;
-                var foo = converter(space, 'sRGB');
-                var rgb = sRGB_prepare(foo([a.val, b.val, c.val]));
-                return new stylus.nodes.RGBA(rgb[0], rgb[1], rgb[2], 1);
-              };
-            }(space));
-          });
-        };
-      };
-    })();
-  } catch (error) {}
+  //try {
+  //  (function () {
+  //    var stylus = require('stylus');
+  //    root = function root() {
+  //      var spaces = Object.keys(conv).filter(function (space) {
+  //        return space !== 'sRGB' && space !== 'hex';
+  //      }).map(function (space) {
+  //        return space;
+  //      });
+  //      return function (style) {
+  //        return spaces.map(function (space) {
+  //          return style.define(space, function (space) {
+  //            return function (a, b, c) {
+  //              var g = void 0,
+  //                  r = void 0;
+  //              var foo = converter(space, 'sRGB');
+  //              var rgb = sRGB_prepare(foo([a.val, b.val, c.val]));
+  //              return new stylus.nodes.RGBA(rgb[0], rgb[1], rgb[2], 1);
+  //            };
+  //          }(space));
+  //        });
+  //      };
+  //    };
+  //  })();
+  //} catch (error) {}
 
   root.converter = converter;
   root.make_color = function (space1, tuple) {
@@ -368,9 +368,9 @@
     module.exports = root;
   }
   // Export to jQuery
-  if (typeof jQuery !== 'undefined' && jQuery !== null) {
-    jQuery.colorspaces = root;
-  }
+  //if (typeof jQuery !== 'undefined' && jQuery !== null) {
+  //  jQuery.colorspaces = root;
+  //}
   // Make a stylus plugin if stylus exists
 
   function __range__(left, right, inclusive) {

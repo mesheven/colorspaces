@@ -1,5 +1,7 @@
 # Mesheven Fork of Colorspaces.js
 
+This fork removes Stylus and jQuery plugin support.
+
 **NOTE: If all you want is perceptually uniform colors, check out [HSLuv](http://www.hsluv.org/) instead.**
 
 A tiny JavaScript and [Node.js](http://nodejs.org) library for manipulating colors. Works as a [Stylus](http://stylus-lang.com/) plugin!

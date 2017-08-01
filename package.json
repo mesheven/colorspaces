@@ -7,8 +7,7 @@
   "main": "colorspaces.js",
   "files": ["colorspaces.js"],
   "devDependencies": {
-    "uglify-js": "*",
-    "stylus": "*"
+    "uglify-js": "*"
   },
   "repository": {
     "type" : "git",
